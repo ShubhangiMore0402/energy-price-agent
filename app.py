@@ -4,15 +4,58 @@ from datetime import date
 
 from src.agent import run_energy_agent
 
+
+def detect_use_cases_from_prompt(prompt: str, default_use_case: str) -> str:
+    prompt_lower = prompt.lower()
+    detected = []
+
+    if "ev" in prompt_lower or "car" in prompt_lower or "charge" in prompt_lower:
+        detected.append("EV charging")
+
+    if "dishwasher" in prompt_lower:
+        detected.append("Dishwasher")
+
+    if "washing" in prompt_lower or "laundry" in prompt_lower:
+        detected.append("Washing machine")
+
+    if "battery" in prompt_lower or "storage" in prompt_lower:
+        detected.append("Battery charging")
+
+    if "heat pump" in prompt_lower or "heating" in prompt_lower:
+        detected.append("Heat pump")
+
+    if detected:
+        return ", ".join(detected)
+
+    return default_use_case
+
+
 st.set_page_config(
     page_title="Energy Price Intelligence Agent",
     layout="wide"
 )
 
+# CSS to make right chat panel feel like sidebar
+st.markdown(
+    """
+    <style>
+    .right-chat-panel {
+        border-left: 1px solid rgba(128, 128, 128, 0.25);
+        padding-left: 1rem;
+        min-height: 85vh;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
 st.title("⚡ Energy Price Intelligence Agent")
 st.write("Find the best time to use electricity based on live energy price data.")
 
-# Sidebar
+if "messages" not in st.session_state:
+    st.session_state.messages = []
+
+# Left sidebar
 with st.sidebar.expander("ℹ️ About This Project"):
     st.markdown(
         """
@@ -59,78 +102,123 @@ show_details = st.sidebar.checkbox(
 
 run_button = st.sidebar.button("Run Analysis")
 
-if run_button:
-    result = run_energy_agent(
-        source=source,
-        date=str(selected_date),
-        question=question,
-        use_case=use_case
-    )
+# Main page split: dashboard + right collapsible chatbot panel
+dashboard_col, chat_col = st.columns([4.2, 1.25], gap="large")
 
-    if result.get("error"):
-        st.error(result["api_status"])
-        st.stop()
+with dashboard_col:
+    if run_button:
+        result = run_energy_agent(
+            source=source,
+            date=str(selected_date),
+            question=question,
+            use_case=use_case
+        )
 
-    df = result["data"]
-    analysis = result["analysis"]
+        if result.get("error"):
+            st.error(result["api_status"])
+            st.stop()
 
-    # Recommendation
-    st.subheader("Recommendation")
-    st.info(result["recommendation"])
+        df = result["data"]
+        analysis = result["analysis"]
 
-    # KPI Cards
-    st.subheader("Key Metrics")
+        st.subheader("Recommendation")
+        st.info(result["recommendation"])
 
-    col1, col2, col3, col4 = st.columns(4)
+        st.subheader("Key Metrics")
 
-    col1.metric("Average Price", f"{analysis['average_price']} €/MWh")
-    col2.metric("Cheapest Price", f"{analysis['min_price']} €/MWh")
-    col3.metric("Highest Price", f"{analysis['max_price']} €/MWh")
-    col4.metric(
-        "Estimated Saving",
-        f"€{analysis['estimated_saving_eur']}",
-        help=f"Estimated saving by shifting {analysis['example_kwh']} kWh from highest-price hour to cheapest-price hour."
-    )
+        col1, col2, col3, col4 = st.columns(4)
 
-    # Chart
-    st.subheader("Price Trend Chart")
+        col1.metric("Average Price", f"{analysis['average_price']} €/MWh")
+        col2.metric("Cheapest Price", f"{analysis['min_price']} €/MWh")
+        col3.metric("Highest Price", f"{analysis['max_price']} €/MWh")
+        col4.metric(
+            "Estimated Saving",
+            f"€{analysis['estimated_saving_eur']}",
+            help=f"Estimated saving by shifting {analysis['example_kwh']} kWh from highest-price hour to cheapest-price hour."
+        )
 
-    fig = px.line(
-        df,
-        x="hour",
-        y="price_eur_mwh",
-        markers=True,
-        title="Hourly Electricity Price",
-        labels={
-            "hour": "Hour of Day",
-            "price_eur_mwh": "Price (€/MWh)"
-        }
-    )
+        st.subheader("Price Trend Chart")
 
-    st.plotly_chart(fig, use_container_width=True)
+        fig = px.line(
+            df,
+            x="hour",
+            y="price_eur_mwh",
+            markers=True,
+            title="Hourly Electricity Price",
+            labels={
+                "hour": "Hour of Day",
+                "price_eur_mwh": "Price (€/MWh)"
+            }
+        )
 
-    # Tables
-    col_left, col_right = st.columns(2)
+        st.plotly_chart(fig, use_container_width=True)
 
-    with col_left:
-        st.subheader("Cheapest Hours")
-        st.dataframe(analysis["cheapest_hours"], use_container_width=True)
+        col_left, col_right = st.columns(2)
 
-    with col_right:
-        st.subheader("Most Expensive Hours")
-        st.dataframe(analysis["expensive_hours"], use_container_width=True)
+        with col_left:
+            st.subheader("Cheapest Hours")
+            st.dataframe(analysis["cheapest_hours"], use_container_width=True)
 
-    # Optional technical details
-    if show_details:
-        st.subheader("Technical Details")
-        st.json({
-            "source": source,
-            "selected_date": str(selected_date),
-            "use_case": use_case,
-            "question": question,
-            "rows_fetched": len(df),
-            "api_status": result["api_status"]
-        })
+        with col_right:
+            st.subheader("Most Expensive Hours")
+            st.dataframe(analysis["expensive_hours"], use_container_width=True)
 
-else:
-    st.info("Choose your settings from the sidebar and click **Run Analysis**.")
+        if show_details:
+            st.subheader("Technical Details")
+            st.json({
+                "source": source,
+                "selected_date": str(selected_date),
+                "use_case": use_case,
+                "question": question,
+                "rows_fetched": len(df),
+                "api_status": result["api_status"]
+            })
+
+    else:
+        st.info("Choose your settings from the sidebar and click **Run Analysis**.")
+
+with chat_col:
+    #st.markdown('<div class="right-chat-panel">', unsafe_allow_html=True)
+
+    st.markdown("### 💬 Energy Assistant")
+
+    with st.expander("Open Chatbot", expanded=False):
+        st.caption("Ask about EV charging, dishwasher, battery, heat pump, or savings.")
+
+        for message in st.session_state.messages:
+            with st.chat_message(message["role"]):
+                st.markdown(message["content"])
+
+        user_prompt = st.chat_input("Ask about prices...")
+
+        if user_prompt:
+            st.session_state.messages.append({
+                "role": "user",
+                "content": user_prompt
+            })
+
+            detected_use_cases = detect_use_cases_from_prompt(
+                user_prompt,
+                default_use_case=use_case
+            )
+
+            chat_result = run_energy_agent(
+                source=source,
+                date=str(selected_date),
+                question=user_prompt,
+                use_case=detected_use_cases
+            )
+
+            if chat_result.get("error"):
+                assistant_response = chat_result["api_status"]
+            else:
+                assistant_response = chat_result["recommendation"]
+
+            st.session_state.messages.append({
+                "role": "assistant",
+                "content": assistant_response
+            })
+
+            st.rerun()
+
+    st.markdown("</div>", unsafe_allow_html=True)
