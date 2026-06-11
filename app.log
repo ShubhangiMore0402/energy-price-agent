@@ -1,0 +1,271 @@
+2026-06-10 17:50:09,821 - INFO - Starting price fetch | source=OPSD | date=2020-06-10
+2026-06-10 17:50:15,894 - INFO - Price fetch successful | rows=24
+2026-06-10 17:50:15,897 - INFO - Starting price analysis | rows=24
+2026-06-10 17:50:15,899 - INFO - Price analysis completed
+2026-06-10 17:50:15,900 - INFO - Creating recommendation
+2026-06-10 17:50:26,003 - INFO - Starting price fetch | source=OPSD | date=2020-06-09
+2026-06-10 17:50:31,588 - INFO - Price fetch successful | rows=24
+2026-06-10 17:50:31,591 - INFO - Starting price analysis | rows=24
+2026-06-10 17:50:31,592 - INFO - Price analysis completed
+2026-06-10 17:50:31,592 - INFO - Creating recommendation
+2026-06-10 17:50:42,836 - INFO - Starting price fetch | source=OPSD | date=2020-06-09
+2026-06-10 17:50:48,440 - INFO - Price fetch successful | rows=24
+2026-06-10 17:50:48,443 - INFO - Starting price analysis | rows=24
+2026-06-10 17:50:48,444 - INFO - Price analysis completed
+2026-06-10 17:50:48,444 - INFO - Creating recommendation
+2026-06-10 17:50:52,591 - INFO - Starting price fetch | source=OPSD | date=2020-06-05
+2026-06-10 17:50:58,485 - INFO - Price fetch successful | rows=24
+2026-06-10 17:50:58,487 - INFO - Starting price analysis | rows=24
+2026-06-10 17:50:58,488 - INFO - Price analysis completed
+2026-06-10 17:50:58,489 - INFO - Creating recommendation
+2026-06-10 17:54:03,425 - INFO - Starting price fetch | source=OPSD | date=2020-06-10
+2026-06-10 17:54:09,181 - INFO - Price fetch successful | rows=24
+2026-06-10 17:54:09,184 - INFO - Starting price analysis | rows=24
+2026-06-10 17:54:09,186 - INFO - Price analysis completed
+2026-06-10 17:54:09,187 - INFO - Creating recommendation
+2026-06-10 17:59:23,258 - INFO - Starting price fetch | source=OPSD | date=2020-06-10
+2026-06-10 17:59:29,382 - INFO - Price fetch successful | rows=24
+2026-06-10 17:59:29,386 - INFO - Starting price analysis | rows=24
+2026-06-10 17:59:29,388 - INFO - Price analysis completed
+2026-06-10 17:59:29,389 - INFO - Creating recommendation
+2026-06-10 17:59:42,599 - INFO - Starting price fetch | source=OPSD | date=2020-06-10
+2026-06-10 17:59:48,613 - INFO - Price fetch successful | rows=24
+2026-06-10 17:59:48,616 - INFO - Starting price analysis | rows=24
+2026-06-10 17:59:48,617 - INFO - Price analysis completed
+2026-06-10 17:59:48,618 - INFO - Creating recommendation
+2026-06-10 17:59:58,278 - INFO - Starting price fetch | source=OPSD | date=2021-03-05
+2026-06-10 18:00:05,626 - ERROR - Price fetch failed | error=No OPSD price data found for 2021-03-05. Try a historical date such as 2020-06-10.
+2026-06-10 18:00:05,632 - INFO - Using fallback sample data
+2026-06-10 18:00:05,636 - INFO - Starting price analysis | rows=24
+2026-06-10 18:00:05,636 - INFO - Price analysis completed
+2026-06-10 18:00:05,637 - INFO - Creating recommendation
+2026-06-10 18:22:20,292 - INFO - Starting price fetch | source=ENTSO-E | date=2026-06-03
+2026-06-10 18:22:20,292 - ERROR - Price fetch failed | error=ENTSOE_API_KEY is missing. Add it to your .env file.
+2026-06-10 18:22:20,330 - INFO - Starting price analysis | rows=24
+2026-06-10 18:22:20,335 - INFO - Price analysis completed
+2026-06-10 18:22:20,337 - INFO - Creating recommendation
+2026-06-10 23:51:50,896 - INFO - Starting price fetch | source=aWATTar
+2026-06-10 23:51:51,174 - INFO - Price fetch successful | rows=24
+2026-06-10 23:51:51,194 - INFO - Starting price analysis | rows=24
+2026-06-10 23:51:51,197 - INFO - Price analysis completed
+2026-06-10 23:51:51,199 - INFO - Creating recommendation
+2026-06-10 23:52:00,592 - INFO - Starting price fetch | source=aWATTar
+2026-06-10 23:52:00,775 - INFO - Price fetch successful | rows=24
+2026-06-10 23:52:00,781 - INFO - Starting price analysis | rows=24
+2026-06-10 23:52:00,784 - INFO - Price analysis completed
+2026-06-10 23:52:00,786 - INFO - Creating recommendation
+2026-06-10 23:52:10,373 - INFO - Starting price fetch | source=aWATTar
+2026-06-10 23:52:10,584 - INFO - Price fetch successful | rows=24
+2026-06-10 23:52:10,589 - INFO - Starting price analysis | rows=24
+2026-06-10 23:52:10,592 - INFO - Price analysis completed
+2026-06-10 23:52:10,594 - INFO - Creating recommendation
+2026-06-10 23:52:21,607 - INFO - Starting price fetch | source=aWATTar
+2026-06-10 23:52:21,806 - INFO - Price fetch successful | rows=24
+2026-06-10 23:52:21,810 - INFO - Starting price analysis | rows=24
+2026-06-10 23:52:21,812 - INFO - Price analysis completed
+2026-06-10 23:52:21,813 - INFO - Creating recommendation
+2026-06-10 23:52:32,524 - INFO - Starting price fetch | source=aWATTar
+2026-06-10 23:52:32,711 - INFO - Price fetch successful | rows=24
+2026-06-10 23:52:32,716 - INFO - Starting price analysis | rows=24
+2026-06-10 23:52:32,719 - INFO - Price analysis completed
+2026-06-10 23:52:32,720 - INFO - Creating recommendation
+2026-06-10 23:52:35,493 - INFO - Starting price fetch | source=aWATTar
+2026-06-10 23:52:35,703 - INFO - Price fetch successful | rows=24
+2026-06-10 23:52:35,708 - INFO - Starting price analysis | rows=24
+2026-06-10 23:52:35,710 - INFO - Price analysis completed
+2026-06-10 23:52:35,712 - INFO - Creating recommendation
+2026-06-10 23:52:37,774 - INFO - Starting price fetch | source=aWATTar
+2026-06-10 23:52:37,919 - INFO - Price fetch successful | rows=24
+2026-06-10 23:52:37,922 - INFO - Starting price analysis | rows=24
+2026-06-10 23:52:37,925 - INFO - Price analysis completed
+2026-06-10 23:52:37,926 - INFO - Creating recommendation
+2026-06-10 23:52:38,350 - INFO - Starting price fetch | source=aWATTar
+2026-06-10 23:52:38,505 - INFO - Starting price fetch | source=aWATTar
+2026-06-10 23:52:38,526 - INFO - Price fetch successful | rows=24
+2026-06-10 23:52:38,529 - INFO - Starting price analysis | rows=24
+2026-06-10 23:52:38,531 - INFO - Price analysis completed
+2026-06-10 23:52:38,533 - INFO - Creating recommendation
+2026-06-10 23:52:38,684 - INFO - Starting price fetch | source=aWATTar
+2026-06-10 23:52:38,697 - INFO - Price fetch successful | rows=24
+2026-06-10 23:52:38,699 - INFO - Starting price analysis | rows=24
+2026-06-10 23:52:38,701 - INFO - Price analysis completed
+2026-06-10 23:52:38,702 - INFO - Creating recommendation
+2026-06-10 23:52:38,851 - INFO - Starting price fetch | source=aWATTar
+2026-06-10 23:52:39,006 - INFO - Price fetch successful | rows=24
+2026-06-10 23:52:39,010 - INFO - Starting price analysis | rows=24
+2026-06-10 23:52:39,012 - INFO - Price analysis completed
+2026-06-10 23:52:39,013 - INFO - Creating recommendation
+2026-06-10 23:52:39,060 - INFO - Starting price fetch | source=aWATTar
+2026-06-10 23:52:39,062 - INFO - Price fetch successful | rows=24
+2026-06-10 23:52:39,064 - INFO - Starting price analysis | rows=24
+2026-06-10 23:52:39,065 - INFO - Price analysis completed
+2026-06-10 23:52:39,066 - INFO - Creating recommendation
+2026-06-10 23:52:39,163 - INFO - Starting price fetch | source=aWATTar
+2026-06-10 23:52:39,201 - INFO - Price fetch successful | rows=24
+2026-06-10 23:52:39,202 - INFO - Starting price analysis | rows=24
+2026-06-10 23:52:39,203 - INFO - Price analysis completed
+2026-06-10 23:52:39,204 - INFO - Creating recommendation
+2026-06-10 23:52:39,289 - INFO - Price fetch successful | rows=24
+2026-06-10 23:52:39,290 - INFO - Starting price analysis | rows=24
+2026-06-10 23:52:39,291 - INFO - Price analysis completed
+2026-06-10 23:52:39,292 - INFO - Creating recommendation
+2026-06-10 23:52:40,892 - INFO - Starting price fetch | source=aWATTar
+2026-06-10 23:52:41,121 - INFO - Price fetch successful | rows=24
+2026-06-10 23:52:41,124 - INFO - Starting price analysis | rows=24
+2026-06-10 23:52:41,126 - INFO - Price analysis completed
+2026-06-10 23:52:41,128 - INFO - Creating recommendation
+2026-06-10 23:52:51,528 - INFO - Starting price fetch | source=aWATTar
+2026-06-10 23:52:51,761 - INFO - Price fetch successful | rows=24
+2026-06-10 23:52:51,764 - INFO - Starting price analysis | rows=24
+2026-06-10 23:52:51,766 - INFO - Price analysis completed
+2026-06-10 23:52:51,768 - INFO - Creating recommendation
+2026-06-11 00:04:05,249 - INFO - Starting price fetch | source=aWATTar | date=2026-06-11
+2026-06-11 00:04:05,477 - INFO - Price fetch successful | rows=22
+2026-06-11 00:04:05,492 - INFO - Starting price analysis | rows=22
+2026-06-11 00:04:05,494 - INFO - Price analysis completed
+2026-06-11 00:04:05,495 - INFO - Creating recommendation
+2026-06-11 00:04:14,356 - INFO - Starting price fetch | source=aWATTar | date=2026-06-10
+2026-06-11 00:04:14,491 - INFO - Price fetch successful | rows=24
+2026-06-11 00:04:14,495 - INFO - Starting price analysis | rows=24
+2026-06-11 00:04:14,497 - INFO - Price analysis completed
+2026-06-11 00:04:14,498 - INFO - Creating recommendation
+2026-06-11 00:04:22,858 - INFO - Starting price fetch | source=aWATTar | date=2026-06-08
+2026-06-11 00:04:23,023 - INFO - Price fetch successful | rows=24
+2026-06-11 00:04:23,027 - INFO - Starting price analysis | rows=24
+2026-06-11 00:04:23,030 - INFO - Price analysis completed
+2026-06-11 00:04:23,031 - INFO - Creating recommendation
+2026-06-11 00:04:35,757 - INFO - Starting price fetch | source=aWATTar | date=2026-06-01
+2026-06-11 00:04:35,926 - INFO - Price fetch successful | rows=24
+2026-06-11 00:04:35,931 - INFO - Starting price analysis | rows=24
+2026-06-11 00:04:35,933 - INFO - Price analysis completed
+2026-06-11 00:04:35,934 - INFO - Creating recommendation
+2026-06-11 00:14:14,915 - INFO - Starting price fetch | source=aWATTar | date=2026-06-03
+2026-06-11 00:14:15,179 - INFO - Price fetch successful | rows=24
+2026-06-11 00:14:15,200 - INFO - Starting price analysis | rows=24
+2026-06-11 00:14:15,202 - INFO - Price analysis completed
+2026-06-11 00:15:03,855 - INFO - Starting price fetch | source=aWATTar | date=2026-06-03
+2026-06-11 00:15:04,178 - INFO - Price fetch successful | rows=24
+2026-06-11 00:15:04,184 - INFO - Starting price analysis | rows=24
+2026-06-11 00:15:04,187 - INFO - Price analysis completed
+2026-06-11 00:19:08,156 - INFO - Starting price fetch | source=aWATTar | date=2026-06-11
+2026-06-11 00:19:08,506 - INFO - Price fetch successful | rows=22
+2026-06-11 00:19:08,533 - INFO - Starting price analysis | rows=22
+2026-06-11 00:19:08,535 - INFO - Price analysis completed
+2026-06-11 00:19:19,051 - INFO - Starting price fetch | source=aWATTar | date=2026-06-11
+2026-06-11 00:19:19,251 - INFO - Price fetch successful | rows=22
+2026-06-11 00:19:19,257 - INFO - Starting price analysis | rows=22
+2026-06-11 00:19:19,260 - INFO - Price analysis completed
+2026-06-11 00:19:36,380 - INFO - Starting price fetch | source=aWATTar | date=2026-06-02
+2026-06-11 00:19:36,680 - INFO - Price fetch successful | rows=24
+2026-06-11 00:19:36,686 - INFO - Starting price analysis | rows=24
+2026-06-11 00:19:36,688 - INFO - Price analysis completed
+2026-06-11 00:19:56,466 - INFO - Starting price fetch | source=aWATTar | date=2026-06-09
+2026-06-11 00:19:56,728 - INFO - Price fetch successful | rows=24
+2026-06-11 00:19:56,733 - INFO - Starting price analysis | rows=24
+2026-06-11 00:19:56,736 - INFO - Price analysis completed
+2026-06-11 00:21:32,395 - INFO - Starting price fetch | source=aWATTar | date=2026-06-11
+2026-06-11 00:21:32,876 - INFO - Price fetch successful | rows=22
+2026-06-11 00:21:32,892 - INFO - Starting price analysis | rows=22
+2026-06-11 00:21:32,895 - INFO - Price analysis completed
+2026-06-11 00:22:36,315 - INFO - Starting price fetch | source=aWATTar | date=2026-06-13
+2026-06-11 00:22:36,673 - ERROR - Price fetch failed | error=No aWATTar price data returned for 2026-06-13
+2026-06-11 00:22:36,686 - INFO - Starting price analysis | rows=24
+2026-06-11 00:22:36,688 - INFO - Price analysis completed
+2026-06-11 00:23:14,477 - INFO - Starting price fetch | source=aWATTar | date=2026-06-11
+2026-06-11 00:23:14,777 - INFO - Price fetch successful | rows=22
+2026-06-11 00:23:14,782 - INFO - Starting price analysis | rows=22
+2026-06-11 00:23:14,785 - INFO - Price analysis completed
+2026-06-11 00:25:07,628 - INFO - Starting price fetch | source=aWATTar | date=2026-06-11
+2026-06-11 00:25:07,868 - INFO - Price fetch successful | rows=22
+2026-06-11 00:25:07,887 - INFO - Starting price analysis | rows=22
+2026-06-11 00:25:07,889 - INFO - Price analysis completed
+2026-06-11 00:27:01,009 - INFO - Starting price fetch | source=aWATTar | date=2026-06-11
+2026-06-11 00:27:01,384 - INFO - Price fetch successful | rows=22
+2026-06-11 00:27:01,402 - INFO - Starting price analysis | rows=22
+2026-06-11 00:27:01,404 - INFO - Price analysis completed
+2026-06-11 00:27:21,950 - INFO - Starting price fetch | source=aWATTar | date=2026-06-11
+2026-06-11 00:27:22,102 - INFO - Price fetch successful | rows=22
+2026-06-11 00:27:22,106 - INFO - Starting price analysis | rows=22
+2026-06-11 00:27:22,110 - INFO - Price analysis completed
+2026-06-11 00:59:23,109 - INFO - Starting price fetch | source=aWATTar | date=2026-06-02
+2026-06-11 00:59:23,368 - INFO - Price fetch successful | rows=24
+2026-06-11 00:59:23,387 - INFO - Starting price analysis | rows=24
+2026-06-11 00:59:23,389 - INFO - Price analysis completed
+2026-06-11 00:59:43,720 - INFO - Starting price fetch | source=aWATTar | date=2026-06-02
+2026-06-11 00:59:44,034 - INFO - Price fetch successful | rows=24
+2026-06-11 00:59:44,039 - INFO - Starting price analysis | rows=24
+2026-06-11 00:59:44,043 - INFO - Price analysis completed
+2026-06-11 01:00:45,834 - INFO - Starting price fetch | source=aWATTar | date=2026-06-11
+2026-06-11 01:00:46,228 - INFO - Price fetch successful | rows=22
+2026-06-11 01:00:46,251 - INFO - Starting price analysis | rows=22
+2026-06-11 01:00:46,255 - INFO - Price analysis completed
+2026-06-11 01:01:38,510 - INFO - Starting price fetch | source=aWATTar | date=2026-06-11
+2026-06-11 01:01:38,681 - INFO - Price fetch successful | rows=22
+2026-06-11 01:01:38,684 - INFO - Starting price analysis | rows=22
+2026-06-11 01:01:38,686 - INFO - Price analysis completed
+2026-06-11 01:01:46,269 - INFO - Starting price fetch | source=aWATTar | date=2026-06-11
+2026-06-11 01:01:46,424 - INFO - Price fetch successful | rows=22
+2026-06-11 01:01:46,428 - INFO - Starting price analysis | rows=22
+2026-06-11 01:01:46,431 - INFO - Price analysis completed
+2026-06-11 01:02:58,417 - INFO - Starting price fetch | source=aWATTar | date=2026-06-01
+2026-06-11 01:02:58,643 - INFO - Price fetch successful | rows=24
+2026-06-11 01:02:58,649 - INFO - Starting price analysis | rows=24
+2026-06-11 01:02:58,652 - INFO - Price analysis completed
+2026-06-11 01:03:06,537 - INFO - Starting price fetch | source=aWATTar | date=2026-06-01
+2026-06-11 01:03:06,708 - INFO - Price fetch successful | rows=24
+2026-06-11 01:03:06,713 - INFO - Starting price analysis | rows=24
+2026-06-11 01:03:06,716 - INFO - Price analysis completed
+2026-06-11 01:13:30,098 - INFO - Starting price fetch | source=aWATTar | date=2026-06-01
+2026-06-11 01:13:30,672 - INFO - Price fetch successful | rows=24
+2026-06-11 01:13:30,697 - INFO - Starting price analysis | rows=24
+2026-06-11 01:13:30,700 - INFO - Price analysis completed
+2026-06-11 01:13:36,634 - INFO - Starting price fetch | source=aWATTar | date=2026-06-01
+2026-06-11 01:13:36,808 - INFO - Price fetch successful | rows=24
+2026-06-11 01:13:36,810 - INFO - Starting price analysis | rows=24
+2026-06-11 01:13:36,811 - INFO - Price analysis completed
+2026-06-11 01:13:47,077 - INFO - Starting price fetch | source=aWATTar | date=2026-06-01
+2026-06-11 01:13:47,277 - INFO - Price fetch successful | rows=24
+2026-06-11 01:13:47,283 - INFO - Starting price analysis | rows=24
+2026-06-11 01:13:47,286 - INFO - Price analysis completed
+2026-06-11 01:13:56,949 - INFO - Starting price fetch | source=aWATTar | date=2026-06-12
+2026-06-11 01:13:57,123 - ERROR - Price fetch failed | error=No aWATTar price data returned for 2026-06-12
+2026-06-11 01:13:57,137 - INFO - Starting price analysis | rows=24
+2026-06-11 01:13:57,140 - INFO - Price analysis completed
+2026-06-11 01:14:07,064 - INFO - Starting price fetch | source=aWATTar | date=2026-06-13
+2026-06-11 01:14:07,206 - ERROR - Price fetch failed | error=No aWATTar price data returned for 2026-06-13
+2026-06-11 01:14:07,215 - INFO - Starting price analysis | rows=24
+2026-06-11 01:14:07,218 - INFO - Price analysis completed
+2026-06-11 01:14:25,347 - INFO - Starting price fetch | source=aWATTar | date=2026-06-18
+2026-06-11 01:14:25,526 - ERROR - Price fetch failed | error=No aWATTar price data returned for 2026-06-18
+2026-06-11 01:14:25,533 - INFO - Starting price analysis | rows=24
+2026-06-11 01:14:25,536 - INFO - Price analysis completed
+2026-06-11 01:15:55,415 - INFO - Starting price fetch | source=aWATTar | date=2026-06-11
+2026-06-11 01:15:55,618 - INFO - Price fetch successful | rows=22
+2026-06-11 01:15:55,622 - INFO - Starting price analysis | rows=22
+2026-06-11 01:15:55,624 - INFO - Price analysis completed
+2026-06-11 01:36:58,982 - INFO - Starting price fetch | source=aWATTar | date=2026-06-09
+2026-06-11 01:36:59,214 - INFO - Price fetch successful | rows=24
+2026-06-11 01:37:05,509 - INFO - Starting price fetch | source=aWATTar | date=2026-06-09
+2026-06-11 01:37:05,692 - INFO - Price fetch successful | rows=24
+2026-06-11 01:39:58,445 - INFO - Starting price fetch | source=aWATTar | date=2026-06-11
+2026-06-11 01:39:58,692 - INFO - Price fetch successful | rows=22
+2026-06-11 01:40:31,866 - INFO - Starting price fetch | source=aWATTar | date=2026-06-11
+2026-06-11 01:40:32,016 - INFO - Price fetch successful | rows=22
+2026-06-11 01:40:38,638 - INFO - Starting price fetch | source=aWATTar | date=2026-06-02
+2026-06-11 01:40:38,757 - INFO - Price fetch successful | rows=24
+2026-06-11 01:46:00,329 - INFO - Starting price fetch | source=aWATTar | date=2026-06-11
+2026-06-11 01:46:00,573 - INFO - Price fetch successful | rows=22
+2026-06-11 01:46:00,585 - INFO - Starting price analysis | rows=22
+2026-06-11 01:46:00,588 - INFO - Price analysis completed
+2026-06-11 01:46:14,813 - INFO - Starting price fetch | source=aWATTar | date=2026-06-01
+2026-06-11 01:46:14,941 - INFO - Price fetch successful | rows=24
+2026-06-11 01:46:14,943 - INFO - Starting price analysis | rows=24
+2026-06-11 01:46:14,946 - INFO - Price analysis completed
+2026-06-11 01:46:25,311 - INFO - Starting price fetch | source=aWATTar | date=2026-06-01
+2026-06-11 01:46:25,427 - INFO - Price fetch successful | rows=24
+2026-06-11 01:46:25,433 - INFO - Starting price analysis | rows=24
+2026-06-11 01:46:25,434 - INFO - Price analysis completed
+2026-06-11 01:46:33,644 - INFO - Starting price fetch | source=aWATTar | date=2026-06-01
+2026-06-11 01:46:33,788 - INFO - Price fetch successful | rows=24
+2026-06-11 01:46:33,792 - INFO - Starting price analysis | rows=24
+2026-06-11 01:46:33,795 - INFO - Price analysis completed

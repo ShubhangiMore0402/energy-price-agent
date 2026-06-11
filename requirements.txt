@@ -1,0 +1,56 @@
+# Core Data Handling
+
+pandas
+numpy
+
+# API Calls
+
+requests
+httpx
+
+# Environment Variables
+
+python-dotenv
+
+# Jupyter Notebook
+
+notebook
+ipykernel
+jupyter
+
+# Streamlit App
+
+streamlit
+
+# Visualization
+
+plotly
+matplotlib
+
+# LangChain / LangGraph
+
+langchain
+langgraph
+langchain-openai
+langchain-community
+
+# OpenAI / LLM Support
+
+openai
+
+# Database (optional for later)
+
+sqlalchemy
+psycopg2-binary
+
+# Data Validation
+
+pydantic
+
+# Utilities
+
+tqdm
+
+# Optional Nice UI Tables
+
+tabulate
