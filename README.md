@@ -216,7 +216,7 @@ Example Output:
 Clone repository:
 
 ```bash
-git clone <repository-url>
+git clone <https://github.com/ShubhangiMore0402/energy-price-agent.git>
 cd energy-price-agent
 ```
 
