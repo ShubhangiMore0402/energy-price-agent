@@ -1,4 +1,4 @@
-# ⚡ Energy Price Intelligence Agent
+# Energy Price Intelligence Agent
 
 An AI-powered energy optimization assistant built using **LangGraph, Python, Streamlit, and live electricity market APIs**.
 
@@ -6,7 +6,7 @@ The application helps users identify the most cost-effective hours to consume el
 
 ---
 
-## 🚀 Features
+## Features
 
 ### Live Electricity Price Analysis
 
@@ -60,7 +60,7 @@ Built using Streamlit with:
 
 ---
 
-## 🏗️ Architecture
+## Architecture
 
 ```text
 Streamlit UI
@@ -104,7 +104,7 @@ energy-price-agent/
 
 ---
 
-## ⚙️ Tech Stack
+## Tech Stack
 
 ### Backend
 
@@ -140,7 +140,7 @@ energy-price-agent/
 
 ---
 
-## 📊 Example Use Cases
+## Example Use Cases
 
 ### EV Charging
 
@@ -166,7 +166,7 @@ Output:
 
 ---
 
-## 🛠️ Installation
+## Installation
 
 Clone the repository:
 
@@ -196,7 +196,7 @@ streamlit run app.py
 
 ---
 
-## 🔮 Future Enhancements
+## Future Enhancements
 
 * OpenAI-powered recommendation engine
 * Multi-agent architecture
@@ -210,7 +210,7 @@ streamlit run app.py
 
 ---
 
-## 🎯 Why This Project?
+## Why This Project?
 
 This project demonstrates practical skills relevant to modern AI, automation, and business engineering roles:
 
