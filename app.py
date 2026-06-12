@@ -1,5 +1,6 @@
 import streamlit as st
 import plotly.express as px
+import inspect
 from datetime import date
 
 from src.agent import run_energy_agent
@@ -28,6 +29,30 @@ def detect_use_cases_from_prompt(prompt: str, default_use_case: str) -> str:
         return ", ".join(detected)
 
     return default_use_case
+
+
+def run_agent_compat(source: str, selected_date, question: str, use_case: str):
+    """
+    Call run_energy_agent with or without selected_date depending on the imported signature.
+    This keeps the app working if Streamlit is still holding an older module version.
+    """
+    agent_params = inspect.signature(run_energy_agent).parameters
+
+    if "selected_date" in agent_params:
+        return run_energy_agent(
+            source=source,
+            date=str(selected_date),
+            selected_date=str(selected_date),
+            question=question,
+            use_case=use_case,
+        )
+
+    return run_energy_agent(
+        source=source,
+        date=str(selected_date),
+        question=question,
+        use_case=use_case,
+    )
 
 
 st.set_page_config(
@@ -79,6 +104,8 @@ selected_date = st.sidebar.date_input(
     value=date.today()
 )
 
+st.sidebar.caption(f"Analysis date in use: {selected_date}")
+
 use_case = st.sidebar.selectbox(
     "Use case",
     [
@@ -92,7 +119,7 @@ use_case = st.sidebar.selectbox(
 
 question = st.sidebar.text_area(
     "Ask your question",
-    "When is electricity cheapest today?"
+    "When is electricity cheapest?"
 )
 
 show_details = st.sidebar.checkbox(
@@ -107,11 +134,13 @@ dashboard_col, chat_col = st.columns([4.2, 1.25], gap="large")
 
 with dashboard_col:
     if run_button:
-        result = run_energy_agent(
+        st.info(f"Analyzing data for: {selected_date}")
+
+        result = run_agent_compat(
             source=source,
-            date=str(selected_date),
+            selected_date=selected_date,
             question=question,
-            use_case=use_case
+            use_case=use_case,
         )
 
         if result.get("error"):
@@ -120,6 +149,7 @@ with dashboard_col:
 
         df = result["data"]
         analysis = result["analysis"]
+        data_source = result.get("data_source", "unknown")
 
         st.subheader("Recommendation")
         st.info(result["recommendation"])
@@ -170,6 +200,7 @@ with dashboard_col:
                 "selected_date": str(selected_date),
                 "use_case": use_case,
                 "question": question,
+                "data_source": data_source,
                 "rows_fetched": len(df),
                 "api_status": result["api_status"]
             })
@@ -184,6 +215,7 @@ with chat_col:
 
     with st.expander("Open Chatbot", expanded=False):
         st.caption("Ask about EV charging, dishwasher, battery, heat pump, or savings.")
+        st.caption(f"Chat is analyzing: {selected_date}")
 
         for message in st.session_state.messages:
             with st.chat_message(message["role"]):
@@ -202,11 +234,11 @@ with chat_col:
                 default_use_case=use_case
             )
 
-            chat_result = run_energy_agent(
+            chat_result = run_agent_compat(
                 source=source,
-                date=str(selected_date),
+                selected_date=selected_date,
                 question=user_prompt,
-                use_case=detected_use_cases
+                use_case=detected_use_cases,
             )
 
             if chat_result.get("error"):

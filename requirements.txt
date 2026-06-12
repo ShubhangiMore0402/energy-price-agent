@@ -33,6 +33,7 @@ langchain
 langgraph
 langchain-openai
 langchain-community
+langchain-core
 
 # OpenAI / LLM Support
 

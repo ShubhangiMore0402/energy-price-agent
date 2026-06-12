@@ -145,23 +145,25 @@ def create_prices_table():
 def fetch_historical_awattar_prices(months: int = 6) -> pd.DataFrame:
     """
     Fetch historical German electricity market prices from aWATTar API for the past N months.
-    
+
+    This backfills every day in the range so the database can answer historical
+    queries for arbitrary selected dates inside that window.
+
     Args:
         months: Number of months of historical data to fetch (default: 6)
-    
+
     Returns:
         pd.DataFrame: Combined historical price data
     """
     all_data = []
     end_date = pd.Timestamp.today().normalize()
-    
-    print(f"Fetching {months} months of historical aWATTar price data...")
-    
-    for i in range(months):
-        # Calculate the date for each month
-        current_date = end_date - pd.Timedelta(days=30 * i)
+    start_date = end_date - pd.DateOffset(months=months)
+
+    print(f"Fetching historical aWATTar price data from {start_date.date()} to {end_date.date()}...")
+
+    for current_date in pd.date_range(start=start_date, end=end_date, freq="D"):
         date_str = current_date.strftime("%Y-%m-%d")
-        
+
         try:
             print(f"  Fetching data for {date_str}...", end="")
             df = fetch_awattar_prices(date_str)
@@ -172,14 +174,14 @@ def fetch_historical_awattar_prices(months: int = 6) -> pd.DataFrame:
         except Exception as e:
             print(f" ✗ (Error: {str(e)[:50]}...)")
             continue
-    
+
     if not all_data:
         raise ValueError("No historical price data could be fetched from aWATTar API")
-    
+
     combined_df = pd.concat(all_data, ignore_index=True)
     combined_df = combined_df.sort_values("timestamp").reset_index(drop=True)
-    
-    print(f"\n✓ Successfully fetched {len(combined_df)} price records across {len(all_data)} days")
+
+    print(f"\n✓ Successfully fetched {len(combined_df)} price records across {combined_df['timestamp'].dt.date.nunique()} days")
     return combined_df
 
 
@@ -224,6 +226,17 @@ def store_prices_in_db(df: pd.DataFrame):
     except Exception as e:
         print(f"✗ Error storing data in database: {e}")
         raise
+
+
+def backfill_price_day_to_db(date: str) -> pd.DataFrame:
+    """
+    Fetch one historical day from aWATTar and persist it to PostgreSQL.
+
+    This is used when the MCP layer cannot find a selected historical day in the database.
+    """
+    df = fetch_awattar_prices(date)
+    store_prices_in_db(df)
+    return df
 
 
 def load_historical_data_to_db(months: int = 6):
